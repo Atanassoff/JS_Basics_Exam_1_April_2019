@@ -1,0 +1,19 @@
+function demo(input){
+    let num = Number(input[0]);
+    let film = ""; let filmRating = 0; let maxFilm = ""; let minFilm = "";
+    let max = Number.MIN_VALUE; let min = Number.MAX_VALUE;
+    let allRatings = 0;
+    let i = 0;
+    for(j = 1; j <= num; j++){
+        i++;
+        film = input[i];
+        i++;
+        filmRating = Number(input[i]);
+        allRatings += filmRating;
+        if(max < filmRating){max = filmRating; maxFilm = film;}
+        if(min > filmRating){min = filmRating; minFilm = film;}
+    }
+    console.log(`${maxFilm} is with highest rating: ${max.toFixed(1)}`);
+    console.log(`${minFilm} is with lowest rating: ${min.toFixed(1)}`);
+    console.log(`Average rating: ${(allRatings / num).toFixed(1)}`);
+}
