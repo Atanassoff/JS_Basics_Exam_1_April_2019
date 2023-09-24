@@ -1,0 +1,24 @@
+function demo(input){
+    let budget = Number(input[0]);
+    let boughtThing = "";
+    let price = 0;
+    let filmTicket = 0; let notTicket = 0; 
+    let i = 1;
+    while((boughtThing = input[i]) != "End"){
+        if(boughtThing.length > 8){
+            price = boughtThing.charCodeAt(0) + boughtThing.charCodeAt(1);
+            budget -= price;
+            if(budget >= 0){filmTicket++;}
+            else{break;}
+        }
+        else{
+            price = boughtThing.charCodeAt(0);
+            budget -= price;
+            if(budget >= 0){notTicket++;}
+            else{break;}
+        }
+        i++;
+    }
+    console.log(`${filmTicket}`);
+    console.log(`${notTicket}`);
+}
