@@ -1,0 +1,8 @@
+function demo(input){
+    let rent = Number(input[0]);
+    let stat = rent * 0.7;
+    let cater = stat * 0.85;
+    let sound = cater / 2;
+    let total = rent + stat + cater + sound;
+    console.log(total.toFixed(2));
+}
